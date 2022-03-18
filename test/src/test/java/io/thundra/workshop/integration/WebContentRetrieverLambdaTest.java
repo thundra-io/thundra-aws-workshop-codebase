@@ -15,10 +15,10 @@ class WebContentRetrieverLambdaTest extends IntegrationTestBase{
     @BeforeAll
     void initialize() throws RuntimeException {
 
-        if(Constants.WEB_CONTENT_RETRIEVER_URL == null || Constants.WEB_CONTENT_RETRIEVER_URL.isEmpty()) {
-            throw new RuntimeException("Thundra Workshop WEB CONTENT RETRIEVER URL is not set");
+        if(Constants.THUNDRA_WORKSHOP_STACK_URL == null) {
+            throw new RuntimeException("Thundra Workshop Stack URL is not set");
         }
-        this.setBaseUrl(Constants.WEB_CONTENT_RETRIEVER_URL);
+        this.setBaseUrl(Constants.THUNDRA_WORKSHOP_STACK_URL);
     }
 
     @Test

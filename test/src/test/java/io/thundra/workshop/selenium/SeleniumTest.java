@@ -21,7 +21,7 @@ class SeleniumTest extends SeleniumTestBase{
 
     @BeforeAll
     public void initialize() {
-        this.init(Objects.requireNonNull(Constants.WEB_CONTENT_RETRIEVER_URL));
+        this.init(Objects.requireNonNull(Constants.THUNDRA_WORKSHOP_STACK_URL));
         this.setBaseUrl(this.getBaseUrl().concat("/todo-app"));
     }
 

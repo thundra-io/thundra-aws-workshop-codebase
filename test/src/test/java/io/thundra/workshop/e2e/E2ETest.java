@@ -28,13 +28,12 @@ class E2ETest {
         selenium = new SeleniumTestBase();
         integration = new IntegrationTestBase();
 
-        if(Objects.requireNonNull(Constants.WEB_CONTENT_RETRIEVER_URL).isEmpty()
-                || Objects.requireNonNull(Constants.SNS_WRITER_URL).isEmpty()){
-            throw new RuntimeException("SNS_WRITER_URL and WEB_CONTENT_RETRIEVER_URL must be set");
+        if(Objects.requireNonNull(Constants.THUNDRA_WORKSHOP_STACK_URL).isEmpty()){
+            throw new RuntimeException("Thundra Workshop Stack URL is not set");
         }
 
-        selenium.init(Constants.WEB_CONTENT_RETRIEVER_URL);
-        integration.setBaseUrl(Constants.SNS_WRITER_URL);
+        selenium.init(Constants.THUNDRA_WORKSHOP_STACK_URL);
+        integration.setBaseUrl(Constants.THUNDRA_WORKSHOP_STACK_URL);
     }
 
     private void waitUntilPageLoaded(){

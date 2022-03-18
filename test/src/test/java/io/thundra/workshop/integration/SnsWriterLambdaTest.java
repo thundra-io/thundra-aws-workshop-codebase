@@ -14,10 +14,10 @@ class SnsWriterLambdaTest extends IntegrationTestBase{
     @BeforeAll
     void initialize() throws RuntimeException {
 
-        if( Constants.SNS_WRITER_URL == null || Constants.SNS_WRITER_URL.isEmpty()) {
-            throw new RuntimeException("SNS WRITER URL is not set");
+        if( Constants.THUNDRA_WORKSHOP_STACK_URL == null) {
+            throw new RuntimeException("Thundra Workshop Stack URL is not set");
         }
-        this.setBaseUrl(Constants.SNS_WRITER_URL);
+        this.setBaseUrl(Constants.THUNDRA_WORKSHOP_STACK_URL);
     }
 
     @Test
