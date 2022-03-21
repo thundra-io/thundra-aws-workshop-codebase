@@ -1,13 +1,16 @@
+#!/bin/bash -ex
+
 if [ ! -f ./test/chromedriver ]; then
-    echo "Chromedriver not found in test folder. Please download suitable version from https://chromedriver.storage.googleapis.com/index.html"
+    echo "Couldn't find the ChromeDriver in the test folder."
+    echo "Please download suitable version from https://chromedriver.storage.googleapis.com/index.html"
+    echo "Find out your Chrome version by visiting chrome://settings/help"
     exit 1
 fi
 
 export $(cat .env | sed 's/#.*//g' | xargs)
 
-cd "./test"
+pushd ./test
 
-mvn clean test
-mvn clean
+mvn clean install
 
-cd ..
+popd

@@ -1,6 +1,8 @@
 
 if ((Test-Path "./test/chromedriver.exe") -eq $false) {
-    Write-Host "Chromedriver not found in test folder. Please download suitable version from https://chromedriver.storage.googleapis.com/index.html"
+    Write-Host "Couldn't find the ChromeDriver in the test folder."
+    Write-Host "Please download suitable version from https://chromedriver.storage.googleapis.com/index.html"
+    Write-Host "Find out your Chrome version by visiting chrome://settings/help"
     exit 1
 }
 
@@ -46,10 +48,9 @@ function ExportEnvironmentVariable {
 
 
 ExportEnvironmentVariable
- 
+
 cd "./test"
 
-mvn clean test
-mvn clean
+mvn clean install
 
 cd ..
